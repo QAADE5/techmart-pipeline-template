@@ -13,7 +13,7 @@ line-length = 88
 target-version = "py311"
 
 [tool.ruff.lint]
-ignore = ["RUF010", "DTZ005"]
+lint.ignore = ["RUF010", "DTZ005"]
 
 [tool.pytest.ini_options]
 addopts = "-v"
