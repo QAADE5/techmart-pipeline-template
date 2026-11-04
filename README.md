@@ -8,6 +8,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/dhamenable/techmart-pipeline-template)
 ![Open Issues](https://img.shields.io/github/issues/dhamenable/techmart-pipeline-template)
 
+https://github.com/dhamenable/techmart-pipeline-template
 
 <mark>*Replace `YOUR_USERNAME/YOUR_REPO` with your details*</mark>
 
