@@ -1,18 +1,26 @@
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
+name: Lint
 
-  - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: '3.12'
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-  - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      python -m pip install -r requirements.txt
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
 
-  - name: Run tests with coverage
-    run: |
-      pytest --cov=src --cov-report=term-missing
-      # To block merges on low coverage, add: --cov-fail-under=70
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run Ruff
+        run: ruff check .
